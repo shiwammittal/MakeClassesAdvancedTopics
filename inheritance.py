@@ -1,7 +1,17 @@
 class Parent():
     def __init__(self, last_name, eye_color):
+        print("Parent constructor in execution")
         self.last_name = last_name
         self.eye_color = eye_color
 
-shiwam_mittal = Parent("mittal","black")
-print(shiwam_mittal.last_name)
+class Child(Parent):
+    def __init__(self, last_name, eye_color, number_of_toys):
+        print("Child constructor in execution")
+        Parent.__init__(self, last_name, eye_color)
+        self.number_of_toys = number_of_toys
+
+#name = Parent("mittal","black")
+#print(name.last_name)
+name = Child("mittal", "black", 5)
+print(name.last_name)
+print(name.number_of_toys)
